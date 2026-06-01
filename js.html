@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        select, input {
+            padding: 8px;
+            width: 200px;
+        }
+
+        #eventsContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .event-card {
+            background: white;
+            padding: 15px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .event-card h3 {
+            color: #2196F3;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        form div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Local Community Event Portal</h1>
+
+    <!-- Search and Filter -->
+    <div class="controls">
+        <select id="categoryFilter">
+            <option value="All">All Categories</option>
+            <option value="Music">Music</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Sports">Sports</option>
+        </select>
+
+        <input type="text" id="searchBox"
+            placeholder="Search Events...">
+    </div>
+
+    <!-- Events Section -->
+    <div id="eventsContainer"></div>
+
+    <!-- Registration Form -->
+    <form id="registrationForm">
+        <h2>Event Registration</h2>
+
+        <div>
+            <label>Name</label>
+            <input type="text" name="username">
+            <span class="error" id="nameError"></span>
+        </div>
+
+        <div>
+            <label>Email</label>
+            <input type="email" name="email">
+            <span class="error" id="emailError"></span>
+        </div>
+
+        <div>
+            <label>Select Event</label>
+            <select name="eventName" id="eventSelect">
+                <option value="">Choose Event</option>
+            </select>
+            <span class="error" id="eventError"></span>
+        </div>
+
+        <button type="submit" id="registerBtn">
+            Register
+        </button>
+
+        <p id="message"></p>
+    </form>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
